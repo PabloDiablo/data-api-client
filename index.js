@@ -559,6 +559,11 @@ const init = (params) => {
     options.sslEnabled = false
   }
 
+  // Update the AWS http agent with the endpoint
+  if (typeof params.endpoint === 'string') {
+    options.endpoint = params.endpoint
+  }
+
   // Set the configuration for this instance
   const config = {
     // Require engine
